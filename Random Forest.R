@@ -11,7 +11,8 @@ library(grid)
 
 # PREPARAZIONE DATASET E ANALISI FEATURE ----
 
-dataset <- read.csv("/Users/li/Desktop/Lab data challenge/Dataset/LDC2025_training.csv", header = FALSE)
+# Invece di percorsi assoluti
+dataset <- read_csv("data/LDC2025_training_demo.csv", col_names = FALSE)
 
 # Trasformazione feature
 features <- dataset %>% select(V1:V112)
@@ -199,7 +200,7 @@ barplot(importance, main = "Importanza delle componenti principali", col = "dodg
 # Test set
 
 # importazione dei dati
-features.test <- read.csv("/Users/li/Desktop/Lab data challenge/Dataset/LDC2025_test_input.csv", header = F)
+features.test <- read_csv("data/LDC2025_test_input_demo.csv", col_names = FALSE)
 
 # data transformation
 X_test <- apply(features.test, 2, function(x) rollmean(x, k = 4026, fill = "extend", align = "center"))
