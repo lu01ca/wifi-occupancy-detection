@@ -9,9 +9,9 @@ library(zoo)
 library(signal)
 library(TTR)
 
-dataset <- read_csv("/Users/li/Desktop/Lab data challenge/LDC2025_training.csv", col_names = FALSE)
-test <- read_csv("Desktop/Lab data challenge/LDC2025_test_input.csv", col_names = FALSE)
-classe_true<- read_csv("/Users/li/Desktop/Lab data challenge/wifiminers(PREVISIONE_NUOVA).csv")
+dataset <- read_csv("data/LDC2025_training_demo.csv", col_names = FALSE)
+test <- read_csv("data/LDC2025_test_input_demo.csv", col_names = FALSE)
+classe_true <- read_csv("data/wifiminers_demo.csv")
 
 #### trasformazione dati ###
 features <- dataset %>% select(X1:X112)
